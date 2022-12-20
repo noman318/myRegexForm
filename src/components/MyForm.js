@@ -33,7 +33,7 @@ const MyForm = () => {
       <h2 className="text-center m-3">My Validation in Form</h2>
       <form onSubmit={handleSubmit} className='border p-5'>
         <div className="form-group">
-          <label htmlFor="fname">First Name</label>
+          <label htmlFor="fname">First Name <span className="star">*</span></label>
           <input
             type="text"
             className="form-control"
@@ -49,7 +49,7 @@ const MyForm = () => {
         </div>{" "}
         <br />
         <div className="form-group">
-          <label htmlFor="lname">Last Name</label>
+          <label htmlFor="lname">Last Name <span className="star">*</span> </label>
           <input
             type="text"
             className="form-control"
@@ -64,7 +64,7 @@ const MyForm = () => {
         </div>
         <br />
         <div className="d-flex">
-          <label>Gender</label>
+          <label>Gender <span className="star">*</span></label>
           <div className="form-check">
             <label className="form-check-label">Male</label>
             <input
@@ -101,7 +101,7 @@ const MyForm = () => {
         </div>
         <br />
         <div className="form-group">
-          <label htmlFor="uname">User Name</label>
+          <label htmlFor="uname">User Name <span className="star">*</span></label>
           <input
             type="text"
             className="form-control"
@@ -116,10 +116,10 @@ const MyForm = () => {
         </div>
         <br />
         <div className="form-group">
-          <label htmlFor="age">Age</label>
+          <label htmlFor="age">Age <span className="star">*</span></label>
           <input
             type="text"
-            minLength={1}
+            minLength={2}
             maxLength={3}
             className="form-control"
             name="age"
@@ -131,7 +131,7 @@ const MyForm = () => {
         </div>
         <br />
         <div className="form-group">
-          <label htmlFor="quantity">Quantity</label>
+          <label htmlFor="quantity"> Quantity <span className="star">*</span></label>
           <input
             type="text"
             className="form-control"
@@ -146,7 +146,7 @@ const MyForm = () => {
         </div>
         <br />
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
+          <label htmlFor="exampleInputEmail1">Email address <span className="star">*</span></label>
           <input
             type="email"
             className="form-control"
@@ -161,7 +161,7 @@ const MyForm = () => {
         </div>
         <br />
         <div className="form-group">
-          <label htmlFor="price">Price</label>
+          <label htmlFor="price">Price <span className="star">*</span></label>
           <input
             type="text"
             className="form-control"
@@ -176,14 +176,14 @@ const MyForm = () => {
         </div>
         <br />
         <div className="form-group">
-          <label htmlFor="pass">Password</label>
+          <label htmlFor="pass">Password <span className="star">*</span></label>
           <input
             type="password"
             name="pass"
             className="form-control"
             id="pass"
             minLength={1}
-            maxLength={32}
+            maxLength={16}
             value={values.pass}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -192,14 +192,14 @@ const MyForm = () => {
         </div>
         <br />
         <div className="form-group">
-          <label htmlFor="cpass">Confirm Password</label>
+          <label htmlFor="cpass">Confirm Password <span className="star">*</span></label>
           <input
             type="password"
             name="cpass"
             className="form-control"
             id="cpass"
             minLength={1}
-            maxLength={32}
+            maxLength={16}
             value={values.cpass}
             onChange={handleChange}
             onBlur={handleBlur}
