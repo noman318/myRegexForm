@@ -30,8 +30,8 @@ const MyForm = () => {
   console.log(errors);
   return (
     <div>
-      <h2>MyForm</h2>
-      <form onSubmit={handleSubmit}>
+      <h2 className="text-center m-3">My Validation in Form</h2>
+      <form onSubmit={handleSubmit} className='border p-5'>
         <div className="form-group">
           <label htmlFor="fname">First Name</label>
           <input
@@ -40,7 +40,7 @@ const MyForm = () => {
             id="fname"
             name="fname"
             minLength={3}
-            maxLength={12}
+            maxLength={15}
             value={values.fname}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -58,7 +58,7 @@ const MyForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             minLength={3}
-            maxLength={12}
+            maxLength={15}
           />
           {<p className="form-error">{errors.lname}</p>}
         </div>
@@ -106,6 +106,8 @@ const MyForm = () => {
             type="text"
             className="form-control"
             name="uname"
+            minLength={8}
+            maxLength={21}
             value={values.uname}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -172,7 +174,6 @@ const MyForm = () => {
           />
           {<p className="form-error">{errors.price}</p>}
         </div>
-        <br />
         <br />
         <div className="form-group">
           <label htmlFor="pass">Password</label>

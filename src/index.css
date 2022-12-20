@@ -12,6 +12,8 @@ code {
     monospace;
 }
 .form-error {
+  margin-top: .2rem;
   font-size: 1rem;
   color: #b22b27;
+  max-width: 25rem;
 }

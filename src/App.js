@@ -4,9 +4,12 @@ import MyForm from "./components/MyForm";
 
 function App() {
   return (
-    <div className="container">
-      <h1>My Validation in Form</h1>
+    <div className="container d-flex justify-content-center mb-3">
+      <div>
+      {/* <h1>My Validation in Form</h1> */}
       <MyForm />
+      </div>
+
     </div>
   );
 }
