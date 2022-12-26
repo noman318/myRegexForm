@@ -17,7 +17,7 @@ const initialValues = {
 };
 
 const MyForm = () => {
-  const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+  const { values, errors, touched,handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialValues,
     validationSchema: signUpSchema,
     onSubmit: (values) => {
@@ -45,7 +45,8 @@ const MyForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {<p className="form-error">{errors.fname}</p>}
+            {errors.fname && touched.fname?
+                <p className='text-danger'>{errors.fname}</p>:''}
         </div>{" "}
         <br />
         <div className="form-group">
@@ -60,7 +61,9 @@ const MyForm = () => {
             minLength={3}
             maxLength={15}
           />
-          {<p className="form-error">{errors.lname}</p>}
+          {/* {<p className="form-error">{errors.lname}</p>} */}
+          {errors.lname && touched.lname?
+                <p className='text-danger'>{errors.lname}</p>:''}
         </div>
         <br />
         <div className="d-flex">
@@ -112,22 +115,25 @@ const MyForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {<p className="form-error">{errors.uname}</p>}
+          {errors.uname && touched.uname?
+                <p className='text-danger'>{errors.uname}</p>:''}
         </div>
         <br />
         <div className="form-group">
           <label htmlFor="age">Age <span className="star">*</span></label>
           <input
-            type="text"
-            minLength={2}
-            maxLength={3}
+            type="number"
+            min={18}
+            max={120}
             className="form-control"
             name="age"
             value={values.age}
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {<p className="form-error">{errors.age}</p>}
+          {/* {<p className="form-error">{errors.age}</p>} */}
+          {errors.age && touched.age?
+                <p className='text-danger'>{errors.age}</p>:''}
         </div>
         <br />
         <div className="form-group">
@@ -142,7 +148,8 @@ const MyForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {<p className="form-error">{errors.quantity}</p>}
+          {errors.quantity && touched.quantity?
+                <p className='text-danger'>{errors.quantity}</p>:''}
         </div>
         <br />
         <div className="form-group">
@@ -157,7 +164,9 @@ const MyForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {<p className="form-error">{errors.email}</p>}
+          {/* {<p className="form-error">{errors.email}</p>} */}
+          {errors.email && touched.email?
+                <p className='text-danger'>{errors.email}</p>:''}
         </div>
         <br />
         <div className="form-group">
@@ -172,7 +181,9 @@ const MyForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {<p className="form-error">{errors.price}</p>}
+          {/* {<p className="form-error">{errors.price}</p>} */}
+          {errors.price && touched.price?
+                <p className='text-danger'>{errors.price}</p>:''}
         </div>
         <br />
         <div className="form-group">
@@ -188,7 +199,9 @@ const MyForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {<p className="form-error">{errors.pass}</p>}
+          {/* {<p className="form-error">{errors.pass}</p>} */}
+          {errors.pass && touched.pass?
+                <p className='text-danger'>{errors.pass}</p>:''}
         </div>
         <br />
         <div className="form-group">
@@ -204,7 +217,9 @@ const MyForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {<p className="form-error">{errors.cpass}</p>}
+          {/* {<p className="form-error">{errors.cpass}</p>} */}
+          {errors.cpass && touched.cpass?
+                <p className='text-danger'>{errors.cpass}</p>:''}
         </div>
         <br />
         <button type="submit" className="btn btn-primary mt-2">
